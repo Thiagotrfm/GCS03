@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+
+  web:
+    build: .
+    ports:
+     - "8000:8001"
+    volumes:
+     - .:/code
+    depends_on:
+     - db
+    command: ./boot.sh
+
+  db: 
+    image: postgres:alpine
